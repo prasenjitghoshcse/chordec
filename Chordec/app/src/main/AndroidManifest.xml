@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--Dangerous Permissions (User acceptance needed)-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <application
         android:allowBackup="true"
@@ -15,12 +17,16 @@
         <activity
             android:name=".MainActivity"
             android:logo="@drawable/chordec_logo_small"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".Splash"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            android:theme="@android:style/Theme.Black.NoTitleBar"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +37,8 @@
             android:name=".DatabaseActivity"
             android:label="@string/app_name"
             android:logo="@drawable/app_logo"
-            android:parentActivityName="com.example.chordec.chordec.MainActivity">
+            android:parentActivityName="com.example.chordec.chordec.MainActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.chordec.chordec.MainActivity" />
@@ -41,7 +48,8 @@
             android:name=".PlayActivity"
             android:label="@string/app_name"
             android:logo="@drawable/app_logo"
-            android:parentActivityName="com.example.chordec.chordec.DatabaseActivity" >
+            android:parentActivityName="com.example.chordec.chordec.DatabaseActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.chordec.chordec.DatabaseActivity" />

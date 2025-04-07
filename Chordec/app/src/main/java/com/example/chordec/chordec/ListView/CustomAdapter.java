@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.amulyakhare.textdrawable.TextDrawable;
+//import com.amulyakhare.textdrawable.TextDrawable;
 import com.example.chordec.chordec.Database.Chord;
 import com.example.chordec.chordec.Helper.Constants;
 import com.example.chordec.chordec.R;
@@ -97,17 +97,17 @@ public class CustomAdapter extends ArrayAdapter<Chord> {
         String color = Constants.COLORS[position % Constants.COLORS.length];
                 //(int) (Math.random() * Constants.COLORS.length)];
 
-        TextDrawable roundLetter = TextDrawable.builder()
-                .beginConfig()
-                .toUpperCase()
-                .fontSize(80)
-                .withBorder(4)
-                .endConfig()
-                .buildRoundRect(name.substring(0, 1),
-                        Color.parseColor(color),
-                        60);
-
-        holder.RoundedLetter.setImageDrawable(roundLetter);
+//        TextDrawable roundLetter = TextDrawable.builder()
+//                .beginConfig()
+//                .toUpperCase()
+//                .fontSize(80)
+//                .withBorder(4)
+//                .endConfig()
+//                .buildRoundRect(name.substring(0, 1),
+//                        Color.parseColor(color),
+//                        60);
+//
+//        holder.RoundedLetter.setImageDrawable(roundLetter);
 
         if(mSelectedItemsIds.get(position)) {
             convertView.setBackgroundColor(Color.parseColor(Constants.SELECTED_COLOUR));

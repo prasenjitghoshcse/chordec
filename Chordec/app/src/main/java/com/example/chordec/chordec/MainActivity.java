@@ -361,35 +361,34 @@ public class MainActivity extends ActionBarActivity
     */
 
     public void onClick(View v) {
-        switch(v.getId()) {
-            case R.id.recordButton:
-                if(!isRecordLayoutVisible) {
+//        switch(v.getId()) {
+            if(v.getId() == R.id.recordButton) {
+                if (!isRecordLayoutVisible) {
                     animateRecordButton();
                     initializeBeforeRecording();
                     Log.d(TAG, "after pressing record button");
                 }
                 isRecordLayoutVisible = true;
+            }
+        if(v.getId() == R.id.pauseButton) {
+//            case R.id.pauseButton:
+            if (isRecordLayoutVisible) {
+                changePauseButtonSrc();
+            }
 
-
-                break;
-
-            case R.id.pauseButton:
-                if(isRecordLayoutVisible) {
-                    changePauseButtonSrc();
-                }
-
-                break;
-
-            case R.id.stopButton:
-                if(isRecordLayoutVisible) {
-                    stopRecording();
-                }
-                break;
-
-            default:
-                Log.e(TAG, "Widget is not recognized");
-                break;
+//                break;
         }
+        if(v.getId() == R.id.stopButton) {
+//            case R.id.stopButton:
+            if (isRecordLayoutVisible) {
+                stopRecording();
+            }
+//                break;
+        }
+//            default:
+//                Log.e(TAG, "Widget is not recognized");
+//                break;
+//        }
     }
 
     /**

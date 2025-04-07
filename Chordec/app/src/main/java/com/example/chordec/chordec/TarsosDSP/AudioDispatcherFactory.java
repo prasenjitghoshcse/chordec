@@ -24,6 +24,7 @@ package com.example.chordec.chordec.TarsosDSP;
 */
 
 
+import android.Manifest;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
 import android.os.Environment;
@@ -35,6 +36,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.Map;
 
 import be.tarsos.dsp.AudioDispatcher;
 import be.tarsos.dsp.io.TarsosDSPAudioFormat;
@@ -203,5 +205,34 @@ public class AudioDispatcherFactory {
         //deleteTempFile();
     }
 
-
+//    private final ActivityResultLauncher<String[]> requestPermissionLauncher =
+//            registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), new ActivityResultCallback<Map<String, Boolean>>() {
+//                @Override
+//                public void onActivityResult(Map<String, Boolean> result) {
+//                    for (Map.Entry<String, Boolean> entry : result.entrySet()) {
+//                        if((Manifest.permission.RECORD_AUDIO.equals(entry.getKey()) && (entry.getValue()))) {
+//                            StartMicrophoneMonitoring();
+//                        }
+//                    }
+//                }
+//            });
+//
+//    private void StartRequestRecordAudioPermissionFromUserWorkflow() {
+//        String permissionToRequest = Manifest.permission.RECORD_AUDIO;
+//
+//        // Should we show an explanation?
+//        if (ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(),
+//                permissionToRequest)) {
+//            // Show an explanation to the user *asynchronously* -- don't block - TODO:
+//
+//            // Ask for permission if user is satisfied with the explanation - TODO:
+//
+//            // Directly ask for the permission
+//            requestPermissionLauncher.launch(new String[]{permissionToRequest});
+//        } else {
+//            // No explanation needed, we can request the permission.
+//            // Directly ask for the permission
+//            requestPermissionLauncher.launch(new String[]{permissionToRequest});
+//        }
+//    }
 }

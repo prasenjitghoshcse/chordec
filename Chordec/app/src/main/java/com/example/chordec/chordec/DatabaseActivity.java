@@ -119,9 +119,10 @@ public class DatabaseActivity extends ActionBarActivity {
 
             @Override
             public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-                switch (item.getItemId()) {
-
-                    case R.id.action_delete:
+//                switch (item.getItemId()) {
+//
+//                    case R.id.action_delete:
+                if(item.getItemId() == R.id.action_delete) {
 
                         final SparseBooleanArray selected = adapter
                                 .getSelectedIds();
@@ -166,8 +167,11 @@ public class DatabaseActivity extends ActionBarActivity {
                         mode.finish();
                         return true;
 
-                    default:
-                        return false;
+//                    default:
+//                        return false;
+                }
+                else {
+                    return false;
                 }
             }
 
